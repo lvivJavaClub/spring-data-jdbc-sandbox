@@ -1,5 +1,7 @@
 package com.github.javaclub.springdata.jdbc;
 
+import java.util.List;
+
 import com.github.javaclub.springdata.jdbc.data.CustomerRepository;
 import com.github.javaclub.springdata.jdbc.data.RegionRepository;
 import com.github.javaclub.springdata.jdbc.model.Address;
@@ -51,6 +53,9 @@ class SandboxTest {
         System.out.println("customer = " + customer);
 
         var id = customer.region().getId();
+
+        var customersByContinent = customerRepository.findCustomersByContinent(america.continent());
+        System.out.println("customersByContinent = " + customersByContinent);
 
     }
 
